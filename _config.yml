@@ -3,16 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 录知斋随笔
+title: 录知斋
 subtitle:
-description: 一切都是有迹可循的
+description: 君子见机，达人知命!
 author: zeayes
-language:
+avatar: uploads/avatar.jpg
+language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://zeayes.github.io
+url: http://blog.zeayes.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: meizi
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
