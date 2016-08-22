@@ -238,8 +238,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/13/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2016/08/22/pyenv/" itemprop="url">
+                  pyenv管理python版本
                 </a>
               
             
@@ -252,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T07:18:39+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-08-22T22:10:50+08:00" content="2016-08-22">
+              2016-08-22
             </time>
           </span>
 
@@ -263,8 +263,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/13/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/13/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/08/22/pyenv/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/22/pyenv/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,15 +289,20 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p><code>pyenv</code>是一个类似于nodejs的<code>nvm</code>和ruby的<code>rvm</code>的python版本管理工具，它可以让你随意切换python的版本。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li><p>安装到主目录的<code>.pyenv</code>目录下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/yyuu/pyenv.git ~/.pyenv</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置相应的环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cat &lt;&lt; EOF &gt;&gt; ~/.bashrc</div><div class="line">export PYENV_ROOT=&quot;\$HOME/.pyenv&quot;</div><div class="line">export PATH=&quot;\$PYENV_ROOT/bin:\$PATH&quot;</div><div class="line">eval &quot;\$(pyenv init -)&quot;</div><div class="line">EOF</div></pre></td></tr></table></figure>
+</li>
+<li><p>常用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">pyenv install --list <span class="comment"># 查看可安装的版本</span></div><div class="line">pyenv install 2.7.11  <span class="comment"># 安装指定版本</span></div><div class="line">pyenv root  <span class="comment"># 查看PYENV_ROOT环境变量</span></div><div class="line">pyenv versions <span class="comment"># 查看本地安装的python</span></div><div class="line">pyenv update <span class="comment"># 更新pyenvg</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="自定义源"><a href="#自定义源" class="headerlink" title="自定义源"></a>自定义源</h3><p>pyenv安装指定版本的时候，默认的是用官方地址的源，python官方下载地址，貌似被墙了，国内下载特别慢，不过pyenv可以通过<code>PYTHON_BUILD_MIRROR_URL</code>环境变量指定下载地址。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PYTHON_BUILD_MIRROR_URL=<span class="string">"http://pyenv.qiniudn.com/pythons/"</span></div></pre></td></tr></table></figure></p>
+<p>pyenv作者github主页是介绍用这个源，试了下发现这个地址的源好久没更新了。看了下<code>pyenv install --help</code>，发现是可以从本地源码直接安装的，首先需要下载源某个版本代码到$PYENV_ROOT/sources/{PYTHON_VERSION}目录下，然后执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pyenv install -k 2.7.11</div></pre></td></tr></table></figure></p>
 
           
         
